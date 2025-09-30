@@ -13,25 +13,30 @@ AnimalHealthDiary è un'applicazione Python per tenere traccia della salute dei 
 ✅ **Consigli personalizzati**: suggerimenti basati sulla specie, età e condizioni dell'animale  
 ✅ **Rilevamento sintomi**: identifica sintomi gravi e moderati con avvisi  
 ✅ **Report dettagliato**: output formattato con tutte le informazioni e raccomandazioni  
+✅ **Web App con AI**: interfaccia web moderna con analisi AI tramite ChatGPT (OpenAI)
 
 ## Requisiti
 
 - Python 3.6 o superiore
-- Nessuna dipendenza esterna richiesta (utilizza solo librerie standard)
+- Nessuna dipendenza esterna richiesta per script base
+- Per la webapp: Flask, OpenAI (vedi `webapp/requirements.txt`)
 
 ## Installazione
 
 1. Clona il repository:
+
 ```bash
 git clone https://github.com/DamianoCeka/AnimalHealthDiary.git
 cd AnimalHealthDiary
 ```
 
-2. Lo script è pronto all'uso, nessuna installazione aggiuntiva necessaria!
+2. Lo script base è pronto all'uso, nessuna installazione aggiuntiva necessaria!
 
 ## Come usare
 
-### Esecuzione base
+### Script da riga di comando
+
+#### Esecuzione base
 
 Esegui lo script dalla riga di comando:
 
@@ -45,7 +50,7 @@ oppure (su Windows):
 python animal_diary.py
 ```
 
-### Input richiesti
+#### Input richiesti
 
 Lo script ti chiederà di inserire le seguenti informazioni:
 
@@ -56,7 +61,7 @@ Lo script ti chiederà di inserire le seguenti informazioni:
 5. **Alimentazione**: crocchette, umido, mista o casalinga
 6. **Sintomi**: sintomi osservati separati da virgola, o "nessuno" se non ci sono sintomi
 
-### Esempio di utilizzo
+#### Esempio di utilizzo
 
 ```
 === DIARIO SALUTE ANIMALE ===
@@ -70,7 +75,7 @@ Alimentazione (crocchette/umido/mista/casalinga): mista
 Sintomi osservati (separati da virgola, o 'nessuno'): nessuno
 ```
 
-### Output del report
+#### Output del report
 
 Lo script genera un report dettagliato con:
 
@@ -78,17 +83,80 @@ Lo script genera un report dettagliato con:
 - 🚨 **Avvisi importanti**: eventuali sintomi gravi che richiedono attenzione veterinaria
 - 💡 **Consigli**: suggerimenti personalizzati basati su età, peso, specie e alimentazione
 
+### 🌐 Web Application
+
+La webapp offre un'interfaccia moderna e user-friendly con analisi AI tramite ChatGPT!
+
+#### Installazione webapp
+
+1. Naviga nella directory webapp:
+
+```bash
+cd webapp
+```
+
+2. Installa le dipendenze:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Configura la tua chiave API OpenAI:
+
+```bash
+# Linux/Mac
+export OPENAI_API_KEY='sk-your-api-key-here'
+
+# Windows
+set OPENAI_API_KEY=sk-your-api-key-here
+```
+
+#### Avvio della webapp
+
+Esegui l'applicazione Flask:
+
+```bash
+python app.py
+```
+
+L'applicazione sarà disponibile su: http://127.0.0.1:5000
+
+#### Funzionalità della webapp
+
+✨ **Interfaccia Web Moderna**
+- Form interattivo per inserimento dati
+- Design responsive e user-friendly
+- Validazione in tempo reale
+
+🤖 **Analisi AI con ChatGPT**
+- Analisi intelligente dei dati dell'animale
+- Consigli personalizzati basati su AI
+- Valutazioni professionali sulla salute
+
+📊 **Storico Visite**
+- Visualizzazione di tutte le analisi precedenti
+- Ricerca e filtro delle visite
+- Export dei dati
+
+💾 **Persistenza Dati**
+- Salvataggio automatico di ogni analisi
+- Database locale in formato JSON
+- Facile consultazione dello storico
+
 ## Funzionalità di analisi
 
 ### Analisi del peso
+
 - Valutazione basata sulla specie (cane/gatto)
 - Identificazione di possibile sottopeso o sovrappeso
 
 ### Analisi dell'età
+
 - Consigli specifici per cuccioli (< 1 anno)
 - Raccomandazioni per animali anziani (> 10 anni)
 
 ### Analisi dei sintomi
+
 - **Sintomi gravi**: vomito, diarrea, sangue, letargia, febbre, convulsioni → richiesta consulto veterinario urgente
 - **Sintomi moderati**: tosse, starnuti, prurito, perdita appetito, sete eccessiva → monitoraggio consigliato
 
@@ -98,12 +166,28 @@ Lo script genera un report dettagliato con:
 
 ## Struttura del codice
 
+### Script base
+
 Il codice è organizzato in una classe `AnimalHealthDiary` con i seguenti metodi:
 
 - `raccolta_dati()`: raccoglie input dall'utente
 - `analisi_ia()`: analizza i dati con regole intelligenti
 - `genera_report()`: crea e stampa il report finale
 - `esegui()`: metodo principale che coordina l'esecuzione
+
+### Web Application
+
+```
+webapp/
+├── app.py                 # Applicazione Flask principale
+├── requirements.txt       # Dipendenze Python
+├── templates/            # Template HTML
+│   ├── index.html       # Form inserimento dati
+│   ├── history.html     # Storico visite
+│   └── entry.html       # Dettaglio singola visita
+└── data/                # Database locale (creato automaticamente)
+    └── health_history.json
+```
 
 ## Contribuire
 
