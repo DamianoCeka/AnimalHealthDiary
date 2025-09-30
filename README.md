@@ -29,7 +29,6 @@ AnimalHealthDiary è un'applicazione Python per tenere traccia della salute dei 
 ## Installazione
 
 1. Clona il repository:
-
 ```bash
 git clone https://github.com/DamianoCeka/AnimalHealthDiary.git
 cd AnimalHealthDiary
@@ -80,191 +79,90 @@ Alimentazione (crocchette/umido/mista/casalinga): mista
 Sintomi osservati (separati da virgola, o 'nessuno'): nessuno
 ```
 
-#### Output del report
+[... rest of existing content ...]
 
-Lo script genera un report dettagliato con:
+## 🎨 Branding e Asset
 
-- 📋 **Dati animale**: riepilogo delle informazioni inserite
-- 🚨 **Avvisi importanti**: eventuali sintomi gravi che richiedono attenzione veterinaria
-- 💡 **Consigli**: suggerimenti personalizzati basati su età, peso, specie e alimentazione
+Nella directory `branding/` trovi tutti gli asset visivi del progetto:
 
-### 🌐 Web Application
+### Logo Demo
+- **File**: `branding/logo_demo.svg`
+- **Descrizione**: Logo con zampa e croce della salute, stile moderno tech-friendly
+- **Uso**: Header, favicon, materiale promozionale
 
-La webapp offre un'interfaccia moderna e user-friendly con analisi AI tramite ChatGPT!
+### Palette Colori
+- **File**: `branding/color_palette.txt`
+- **Contenuto**: Colori primari (Verde Salute #2ECC71, Blu Tech #3498DB), colori di supporto, gradienti
+- **Uso**: Mantenere coerenza visiva nell'interfaccia
 
-#### Installazione webapp
+### Font Suggeriti
+- **File**: `branding/fonts_suggested.txt`
+- **Raccomandazioni**:
+  - **Headings**: Poppins (Google Fonts)
+  - **Body**: Inter (Google Fonts)
+  - **Code**: JetBrains Mono
+- **Dettagli**: Include dimensioni, line-height, implementazione CSS
 
-1. Naviga nella directory webapp:
+### Come Usare gli Asset
 
+1. **Logo**: Incorpora il file SVG nei tuoi template HTML
+2. **Colori**: Usa i codici HEX forniti per mantenere coerenza visiva
+3. **Font**: Importa da Google Fonts come indicato nel file
+
+## 🌐 Landing Page
+
+Nella directory `landingpage/` trovi una pagina pronta per il deploy:
+
+### File Inclusi
+- **index.html**: Landing page completa con tutte le sezioni
+
+### Sezioni Disponibili
+1. **Hero**: Titolo principale con CTA
+2. **Features**: Grid di funzionalità principali
+3. **Demo**: Placeholder per video/GIF dimostrative
+4. **FAQ**: Domande frequenti
+5. **Contact**: Form e informazioni di contatto
+6. **Privacy Policy**: Link alla policy GDPR
+
+### Deploy della Landing Page
+
+**Opzione 1: GitHub Pages**
 ```bash
-cd webapp
+# La landing page è già pronta, attiva GitHub Pages:
+# Settings > Pages > Source: main branch > /landingpage folder
 ```
 
-2. Installa le dipendenze:
-
+**Opzione 2: Netlify/Vercel**
 ```bash
-pip install -r requirements.txt
+# Deploy diretto dalla cartella landingpage/
+netlify deploy --dir=landingpage
 ```
 
-3. Configura la tua chiave API OpenAI:
-
+**Opzione 3: Server statico**
 ```bash
-# Linux/Mac
-export OPENAI_API_KEY='sk-your-api-key-here'
-
-# Windows
-set OPENAI_API_KEY=sk-your-api-key-here
+cd landingpage
+python -m http.server 8000
+# Visita http://localhost:8000
 ```
 
-#### Avvio della webapp
+### Personalizzazione
 
-Esegui l'applicazione Flask:
+- Sostituisci `[Insert your email]` con il tuo indirizzo email
+- Aggiungi video/GIF nella sezione demo
+- Personalizza i colori utilizzando la palette in `branding/color_palette.txt`
 
-```bash
-python app.py
-```
+## 📄 Privacy Policy
 
-L'applicazione sarà disponibile su: http://127.0.0.1:5000
+Il file `PRIVACY_POLICY.txt` contiene un'informativa privacy compliant GDPR che include:
 
-#### Funzionalità della webapp
+- Raccolta e utilizzo dei dati
+- Diritti dell'interessato (accesso, rettifica, cancellazione, portabilità)
+- Base giuridica del trattamento
+- Informazioni su storage locale e API OpenAI
+- Disclaimer medico
+- Contatti per esercitare i diritti
 
-**✨ Interfaccia Web Moderna**
-- Form interattivo per inserimento dati
-- Design responsive e user-friendly
-- Validazione in tempo reale
-
-**🤖 Analisi AI con ChatGPT**
-- Analisi intelligente dei dati dell'animale
-- Consigli personalizzati basati su AI
-- Valutazioni professionali sulla salute
-
-**📊 Storico Visite**
-- Visualizzazione di tutte le analisi precedenti
-- Ricerca e filtro delle visite
-- Export dei dati in CSV/JSON
-
-**💾 Persistenza Dati**
-- Salvataggio automatico di ogni analisi
-- Database locale in formato JSON
-- Facile consultazione dello storico
-
-### 🆕 Nuove Funzionalità Avanzate
-
-#### 🚨 Sistema di Notifiche Automatiche
-
-Quando vengono rilevati **sintomi critici**, il sistema genera automaticamente un alert:
-
-- **Sintomi monitorati**: vomito, diarrea, sangue, letargia, febbre, convulsioni, difficoltà respiratorie
-- **Alert immediato**: notifica visibile nell'interfaccia
-- **Simulazione email**: log dell'alert con timestamp e dettagli
-- **Raccomandazione**: invito urgente a consultare un veterinario
-
-**Come funziona:**
-- Il sistema analizza i sintomi inseriti
-- Se rileva parole chiave critiche, genera un messaggio di allerta
-- L'alert viene mostrato in modo prominente nella pagina dei risultati
-- Viene salvato nello storico per riferimento futuro
-
-#### 📈 Grafici e Visualizzazioni
-
-La webapp ora genera automaticamente **grafici interattivi** usando Matplotlib:
-
-**1. Grafico Andamento Peso**
-- Visualizza l'evoluzione del peso nel tempo
-- Disponibile nella sezione Storico
-- Filtro per singolo animale
-- Formato PNG incorporato nella pagina
-
-**2. Grafico Distribuzione Attività**
-- Mostra la frequenza dei diversi livelli di attività registrati
-- Utile per monitorare i cambiamenti comportamentali
-- Rappresentazione a barre colorata
-
-**Come accedere:**
-- Vai alla pagina "Storico Visite"
-- Seleziona un animale dal menu (opzionale)
-- I grafici vengono generati automaticamente se ci sono dati sufficienti
-
-#### 📸 Gestione Foto
-
-È ora possibile **allegare foto** a ogni visita:
-
-**Formati supportati:**
-- PNG, JPG, JPEG, GIF
-- Dimensione massima consigliata: 5MB
-
-**Funzionalità:**
-- Upload durante la registrazione di una nuova visita
-- Anteprima dell'immagine caricata
-- Storage locale in `webapp/data/photos/`
-- Visualizzazione nella pagina di dettaglio della visita
-
-**Come usare:**
-1. Nel form di inserimento dati, clicca su "Allega Foto"
-2. Seleziona un'immagine dal tuo dispositivo
-3. L'immagine verrà salvata con un nome unico
-4. Visualizza la foto nella cronologia delle visite
-
-#### 💾 Esportazione Dati
-
-Ora puoi **esportare tutto lo storico** in due formati:
-
-**1. Formato CSV**
-- Compatibile con Excel, Google Sheets
-- Colonne: ID, Data, Nome, Specie, Peso, Età, Alimentazione, Attività, Sintomi, Note
-- Ideale per analisi e grafici personalizzati
-
-**2. Formato JSON**
-- Include tutti i dati inclusa l'analisi AI
-- Formato strutturato per elaborazioni avanzate
-- Backup completo del database
-
-**Come esportare:**
-- Nella pagina "Storico Visite", clicca su "Esporta Dati"
-- Scegli il formato (CSV o JSON)
-- Il file viene scaricato automaticamente
-- Nome file: `animal_health_history.csv` o `animal_health_history.json`
-
-#### 🌍 Supporto Multilingua
-
-L'applicazione supporta **italiano e inglese**:
-
-**Funzionalità:**
-- Cambio lingua in tempo reale
-- Interfaccia completamente tradotta
-- Persistenza della preferenza lingua
-- Supporto UTF-8 per caratteri speciali
-
-**Come cambiare lingua:**
-1. Clicca sull'icona della lingua nell'header (🇮🇹/🇬🇧)
-2. Seleziona la lingua desiderata
-3. L'interfaccia si aggiorna istantaneamente
-4. La preferenza viene salvata per le visite future
-
-**Lingue disponibili:**
-- 🇮🇹 Italiano (predefinito)
-- 🇬🇧 English
-
-## Funzionalità di analisi
-
-### Analisi del peso
-
-- Valutazione basata sulla specie (cane/gatto)
-- Identificazione di possibile sottopeso o sovrappeso
-
-### Analisi dell'età
-
-- Consigli specifici per cuccioli (< 1 anno)
-- Raccomandazioni per animali anziani (> 10 anni)
-
-### Analisi dei sintomi
-
-- **Sintomi gravi**: vomito, diarrea, sangue, letargia, febbre, convulsioni → richiesta consulto veterinario urgente
-- **Sintomi moderati**: tosse, starnuti, prurito, perdita appetito, sete eccessiva → monitoraggio consigliato
-
-## Note importanti
-
-⚠️ **Disclaimer**: I consigli forniti da questa applicazione sono indicativi e basati su regole generali. Per diagnosi precise e cure appropriate, consultare sempre un veterinario professionista.
+**Come usare**: Personalizza le sezioni con [Inserire...] con i tuoi dati di contatto.
 
 ## Struttura del codice
 
