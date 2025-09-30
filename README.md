@@ -193,6 +193,95 @@ webapp/
 - Storage foto
 - Gestione nomi file univoci
 
+## 🗺️ Roadmap (Proposta di Sviluppo)
+Di seguito una roadmap con upgrade pianificati. Ogni elemento include: breve descrizione, vantaggi, stato e come collaborare.
+
+1) Gestione utenti (login/profili)
+- Descrizione: Autenticazione (email/password, OAuth), profili utente, ruoli (utente/admin), preferenze.
+- Vantaggi: Dati personali separati, sicurezza, esperienze personalizzate.
+- Stato: TODO
+- Collabora: Apri una issue con titolo "Auth: requisiti & flusso" o proponi un PR con Flask-Login/Flask-Security.
+
+2) App mobile Android/iOS (nativa o PWA)
+- Descrizione: PWA installabile e/o app native (Flutter/React Native) con funzioni offline.
+- Vantaggi: Accesso rapido, notifiche push, UX mobile ottimizzata.
+- Stato: TODO
+- Collabora: Issue "Mobile: scelta stack"; contributi su manifest, service worker e push.
+
+3) Backup cloud / Sync dati
+- Descrizione: Sincronizzazione sicura su cloud (es. Supabase/Firebase/S3) con cifratura lato client.
+- Vantaggi: Protezione dati, multi-dispositivo, ripristino.
+- Stato: TODO
+- Collabora: Issue "Sync: architettura"; PR con provider e strategie di encryption.
+
+4) Consigli AI super personalizzati
+- Descrizione: Modelli dedicati/prompt specializzati per specie, età, condizioni; memory per storico.
+- Vantaggi: Raccomandazioni più accurate e contestuali.
+- Stato: TODO
+- Collabora: Issue "AI: prompt & evaluation"; benchmark con dataset anonimi, guardrail e fallback.
+
+5) Pannello amministratore
+- Descrizione: Dashboard admin per gestione utenti, moderazione contenuti, metriche e audit log.
+- Vantaggi: Governance, qualità, sicurezza.
+- Stato: TODO
+- Collabora: Issue "Admin: requisiti UI"; PR con Flask-Admin/SQLModel.
+
+6) Integrazione Google Calendar per reminder
+- Descrizione: Eventi per visite/vaccini/farmaci via Google Calendar API con OAuth2.
+- Vantaggi: Promemoria affidabili e sincronizzati su tutti i dispositivi.
+- Stato: TODO
+- Collabora: Issue "Calendar: flussi OAuth"; PR con endpoints e webhook.
+
+7) Analisi foto intelligente (Vision AI)
+- Descrizione: Upload foto e analisi base (ferite, dermatiti, condizione fisica) con modelli vision.
+- Vantaggi: Supporto visivo alle valutazioni e allo storico clinico.
+- Stato: TODO
+- Collabora: Issue "Vision: modelli & privacy"; PR con pipeline inference e anonimizzazione.
+
+8) Evoluzione design: dark mode, accessibilità, animazioni
+- Descrizione: Tema dark, contrasto AA/AAA, focus states, motion ridotto, micro-animazioni.
+- Vantaggi: Migliore inclusività, comfort visivo, percezione qualità.
+- Stato: TODO
+- Collabora: Issue "UI: accessibility plan"; PR con CSS variables e prefer-color-scheme.
+
+9) Modulo rating/feedback
+- Descrizione: Feedback su consigli/visite, NPS, commenti in-app.
+- Vantaggi: Miglioramento continuo basato su insight utenti.
+- Stato: TODO
+- Collabora: Issue "Feedback: schema dati"; PR con endpoint e UI modale.
+
+10) API pubblica per integrazioni esterne
+- Descrizione: REST/JSON con API key, rate limit, doc OpenAPI.
+- Vantaggi: Ecosistema, integrazioni terze parti (vet, wearables, food trackers).
+- Stato: TODO
+- Collabora: Issue "API: design"; PR con blueprint Flask e swagger.yaml.
+
+11) Gamification: badge, salute pet, ranking
+- Descrizione: Punti per registrazioni regolari, badge per obiettivi, ranking opzionale.
+- Vantaggi: Engagement e abitudini salutari.
+- Stato: TODO
+- Collabora: Issue "Gamification: meccaniche"; PR con schema e UI component.
+
+12) Gestione multipli animali/profili
+- Descrizione: Supporto n animali per utente, switch rapido, aggregazioni per famiglia.
+- Vantaggi: Utenti con più pet gestiscono tutto in un unico spazio.
+- Stato: TODO
+- Collabora: Issue "Multi-pet: modello dati"; PR con migrazioni e UI lista.
+
+13) Multilingua avanzato
+- Descrizione: i18n esteso (ES/DE/FR), gestione pluralizzazioni e traduzioni community.
+- Vantaggi: Apertura internazionale e inclusività.
+- Stato: TODO
+- Collabora: Issue "i18n: lingue target"; PR con file .po/.mo e guida contributori.
+
+14) Export avanzato PDF/grafici/tabelle
+- Descrizione: Report PDF con grafici (WeasyPrint/ReportLab), tabelle filtrabili, pacchetti ZIP.
+- Vantaggi: Condivisione professionale con veterinari e per backup personali.
+- Stato: TODO
+- Collabora: Issue "Export: formati & template"; PR con template Jinja2 e generatori.
+
+Nota: Per ogni elemento, valuta sicurezza, privacy by design (GDPR), logging minimo e trasparenza.
+
 ## 💖 Supporta lo Sviluppo
 
 Se trovi utile questo progetto e vuoi supportarne lo sviluppo, considera una donazione o l'acquisto di servizi premium!
