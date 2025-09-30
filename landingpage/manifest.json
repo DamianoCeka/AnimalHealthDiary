@@ -1,0 +1,27 @@
+{
+  "name": "AnimalHealthDiary - Pet Health Tracking with AI",
+  "short_name": "AnimalHealth",
+  "description": "Track, Monitor, Care for your pet's health with AI-powered insights",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "logo192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "lifestyle", "utilities"],
+  "lang": "it",
+  "dir": "ltr"
+}
