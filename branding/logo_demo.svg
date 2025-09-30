@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- AnimalHealthDiary Logo Demo -->
+  <!-- Modern tech-inspired logo with animal and health motifs -->
+  
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#3498DB" opacity="0.1"/>
+  
+  <!-- Main Icon: Stylized Paw with Heart -->
+  <g id="paw-heart">
+    <!-- Heart shape (Health) -->
+    <path d="M100 140 C85 125, 70 115, 70 95 C70 80, 80 70, 95 70 C100 70, 105 75, 100 80 C95 75, 90 70, 85 70 C70 70, 60 80, 60 95 C60 120, 85 135, 100 145 C115 135, 140 120, 140 95 C140 80, 130 70, 115 70 C110 70, 105 75, 100 80 C105 75, 110 70, 115 70 C130 70, 140 80, 140 95 C140 115, 125 125, 110 140 Z" 
+          fill="#2ECC71" transform="translate(0, -15) scale(0.7) translate(30, 20)"/>
+    
+    <!-- Paw pads -->
+    <!-- Main pad -->
+    <ellipse cx="100" cy="130" rx="22" ry="18" fill="#2C3E50"/>
+    
+    <!-- Toe pads -->
+    <ellipse cx="75" cy="110" rx="12" ry="15" fill="#2C3E50"/>
+    <ellipse cx="95" cy="105" rx="12" ry="15" fill="#2C3E50"/>
+    <ellipse cx="105" cy="105" rx="12" ry="15" fill="#2C3E50"/>
+    <ellipse cx="125" cy="110" rx="12" ry="15" fill="#2C3E50"/>
+    
+    <!-- Tech accent: Circuit lines -->
+    <path d="M60 70 L75 85" stroke="#3498DB" stroke-width="2" opacity="0.6" fill="none"/>
+    <circle cx="60" cy="70" r="3" fill="#3498DB" opacity="0.8"/>
+    <circle cx="75" cy="85" r="2" fill="#3498DB" opacity="0.8"/>
+    
+    <path d="M140 70 L125 85" stroke="#3498DB" stroke-width="2" opacity="0.6" fill="none"/>
+    <circle cx="140" cy="70" r="3" fill="#3498DB" opacity="0.8"/>
+    <circle cx="125" cy="85" r="2" fill="#3498DB" opacity="0.8"/>
+  </g>
+  
+  <!-- Health Plus Icon (top right accent) -->
+  <g id="health-cross" transform="translate(145, 45)">
+    <circle cx="0" cy="0" r="18" fill="#2ECC71" opacity="0.9"/>
+    <path d="M-8 0 L8 0 M0 -8 L0 8" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Text: AnimalHealthDiary -->
+  <text x="100" y="180" font-family="'Poppins', sans-serif" font-size="16" font-weight="600" fill="#2C3E50" text-anchor="middle">AnimalHealthDiary</text>
+  
+  <!-- Tagline -->
+  <text x="100" y="195" font-family="'Inter', sans-serif" font-size="10" fill="#7F8C8D" text-anchor="middle">Track. Monitor. Care.</text>
+</svg>
