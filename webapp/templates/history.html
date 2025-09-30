@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storico - Animal Health Diary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .nav-links {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .nav-links a {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background: #667eea;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        
+        .empty-state h2 {
+            margin-bottom: 20px;
+            color: #999;
+        }
+        
+        .entry-card {
+            background: #f8f9fa;
+            border-left: 5px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .entry-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .entry-title {
+            font-size: 1.5em;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .entry-date {
+            color: #999;
+            font-size: 0.9em;
+        }
+        
+        .entry-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .entry-detail {
+            display: flex;
+            align-items: center;
+            color: #555;
+        }
+        
+        .entry-detail strong {
+            margin-right: 5px;
+        }
+        
+        .entry-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        
+        .btn-view {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-view:hover {
+            background: #5568d3;
+        }
+        
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn-delete:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Storico Visite</h1>
+        <p class="subtitle">Tutte le analisi AI degli animali</p>
+        
+        <div class="nav-links">
+            <a href="/">⬅️ Torna alla Home</a>
+            <a href="/">➕ Nuova Analisi</a>
+        </div>
+        
+        {% if entries %}
+            {% for entry in entries %}
+            <div class="entry-card">
+                <div class="entry-header">
+                    <div class="entry-title">🐾 {{ entry.dati.nome }}</div>
+                    <div class="entry-date">{{ entry.dati.data }}</div>
+                </div>
+                
+                <div class="entry-details">
+                    <div class="entry-detail">
+                        <strong>Specie:</strong> {{ entry.dati.specie.capitalize() }}
+                    </div>
+                    <div class="entry-detail">
+                        <strong>Età:</strong> {{ entry.dati.eta }} anni
+                    </div>
+                    <div class="entry-detail">
+                        <strong>Peso:</strong> {{ entry.dati.peso }} kg
+                    </div>
+                    <div class="entry-detail">
+                        <strong>Alimentazione:</strong> {{ entry.dati.alimentazione.capitalize() }}
+                    </div>
+                </div>
+                
+                <div class="entry-actions">
+                    <a href="/entry/{{ entry.id }}" class="btn btn-view">🔍 Visualizza Dettagli</a>
+                    <button onclick="deleteEntry('{{ entry.id }}')" class="btn btn-delete">🗑️ Elimina</button>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="empty-state">
+                <h2>💭 Nessun dato disponibile</h2>
+                <p>Non ci sono ancora analisi salvate. Inizia creando una nuova analisi!</p>
+                <br>
+                <a href="/" class="btn btn-view">➕ Crea Prima Analisi</a>
+            </div>
+        {% endif %}
+    </div>
+    
+    <script>
+        async function deleteEntry(entryId) {
+            if (!confirm('Sei sicuro di voler eliminare questa entry?')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch(`/delete/${entryId}`, {
+                    method: 'POST'
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    location.reload();
+                } else {
+                    alert('Errore durante l\'eliminazione: ' + data.message);
+                }
+            } catch (err) {
+                alert('Errore di connessione: ' + err.message);
+            }
+        }
+    </script>
+</body>
+</html>
