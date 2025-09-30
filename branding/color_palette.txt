@@ -1,0 +1,87 @@
+# AnimalHealthDiary - Color Palette
+# Palette colori consigliati per il brand
+
+## Colori Primari
+
+### Verde Salute (Primary)
+HEX: #2ECC71
+RGB: rgb(46, 204, 113)
+USO: Pulsanti principali, CTA, elementi positivi, conferme
+
+### Blu Tech (Secondary)
+HEX: #3498DB
+RGB: rgb(52, 152, 219)
+USO: Link, elementi interattivi, header, highlights tecnologici
+
+## Colori di Supporto
+
+### Arancione Warning
+HEX: #E67E22
+RGB: rgb(230, 126, 34)
+USO: Avvisi moderati, notifiche informative
+
+### Rosso Alert
+HEX: #E74C3C
+RGB: rgb(231, 76, 60)
+USO: Sintomi critici, errori, azioni distruttive
+
+### Giallo Info
+HEX: #F39C12
+RGB: rgb(243, 156, 18)
+USO: Suggerimenti, tips, badge informativi
+
+## Colori Neutri
+
+### Grigio Scuro (Testo principale)
+HEX: #2C3E50
+RGB: rgb(44, 62, 80)
+USO: Testo principale, intestazioni
+
+### Grigio Medio
+HEX: #7F8C8D
+RGB: rgb(127, 140, 141)
+USO: Testo secondario, placeholder, descrizioni
+
+### Grigio Chiaro
+HEX: #ECF0F1
+RGB: rgb(236, 240, 241)
+USO: Sfondi, bordi, card, separatori
+
+### Bianco
+HEX: #FFFFFF
+RGB: rgb(255, 255, 255)
+USO: Sfondo principale, contenuto principale
+
+## Colori per Animali (Optional)
+
+### Marrone Cane
+HEX: #8B4513
+RGB: rgb(139, 69, 19)
+USO: Icone/badge specifici per cani
+
+### Viola Gatto
+HEX: #9B59B6
+RGB: rgb(155, 89, 182)
+USO: Icone/badge specifici per gatti
+
+## Gradienti Suggeriti
+
+### Gradient Hero
+linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+USO: Hero section, banner principali
+
+### Gradient Success
+linear-gradient(120deg, #2ECC71 0%, #27AE60 100%)
+USO: Messaggi di successo, conferme
+
+### Gradient Warning
+linear-gradient(120deg, #E67E22 0%, #D35400 100%)
+USO: Avvisi importanti
+
+## Note d'Uso
+
+- Contrasto minimo per accessibilità: 4.5:1 (WCAG AA)
+- I colori primari devono essere dominanti nell'interfaccia
+- Usare colori di alert con parsimonia per mantenere l'impatto
+- Testare sempre i colori su sfondo bianco e grigio chiaro
+- Per grafici: usare palette con buon contrasto tra loro
