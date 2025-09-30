@@ -1,0 +1,155 @@
+# AnimalHealthDiary - Font Suggeriti
+# Typographic recommendations for the brand
+
+## Font Primari (Primary Typography)
+
+### Titoli e Heading (Headlines)
+
+**Font Raccomandato: Poppins**
+- Tipo: Sans-serif, moderno e friendly
+- Pesi: 600 (SemiBold) per H1-H2, 500 (Medium) per H3-H4
+- Google Fonts: https://fonts.google.com/specimen/Poppins
+- Uso: Titoli principali, hero section, CTA buttons
+- Caratteristiche: Arrotondato, accogliente, molto leggibile
+
+**Alternativa: Nunito**
+- Tipo: Sans-serif con angoli arrotondati
+- Pesi: 700 (Bold) per titoli, 600 (SemiBold) per sottotitoli
+- Google Fonts: https://fonts.google.com/specimen/Nunito
+- Uso: Header, navigation, card titles
+- Caratteristiche: Friendly, pet-friendly aesthetic
+
+### Testo Corpo (Body Text)
+
+**Font Raccomandato: Inter**
+- Tipo: Sans-serif ottimizzato per schermi
+- Pesi: 400 (Regular) per testo normale, 500 (Medium) per emphasis
+- Google Fonts: https://fonts.google.com/specimen/Inter
+- Uso: Paragrafi, descrizioni, form labels
+- Caratteristiche: Eccellente leggibilità, chiaro anche su piccoli schermi
+
+**Alternativa: Open Sans**
+- Tipo: Sans-serif classico e neutrale
+- Pesi: 400 (Regular), 600 (SemiBold)
+- Google Fonts: https://fonts.google.com/specimen/Open+Sans
+- Uso: Contenuto principale, interfaccia utente
+- Caratteristiche: Universalmente leggibile, professionale
+
+### Font Monospace (Codice e Dati Tecnici)
+
+**Font Raccomandato: JetBrains Mono**
+- Tipo: Monospace moderno
+- Pesi: 400 (Regular)
+- Google Fonts: https://fonts.google.com/specimen/JetBrains+Mono
+- Uso: ID animali, timestamp, dati tecnici
+- Caratteristiche: Design pulito, ottima distinzione caratteri
+
+## Pairing Suggerito (Font Combinations)
+
+### Combinazione 1: Moderna e Friendly
+```css
+font-family: 'Poppins', sans-serif;  /* Headings */
+font-family: 'Inter', sans-serif;     /* Body */
+```
+
+### Combinazione 2: Classica e Professionale
+```css
+font-family: 'Nunito', sans-serif;    /* Headings */
+font-family: 'Open Sans', sans-serif; /* Body */
+```
+
+### Combinazione 3: Tech-Forward
+```css
+font-family: 'Poppins', sans-serif;     /* Headings */
+font-family: 'Inter', sans-serif;       /* Body */
+font-family: 'JetBrains Mono', monospace; /* Code/Data */
+```
+
+## Dimensioni Suggerite (Font Sizes)
+
+### Desktop
+- H1: 48px - 56px (Hero titles)
+- H2: 36px - 42px (Section titles)
+- H3: 28px - 32px (Subsection titles)
+- H4: 22px - 24px (Card titles)
+- Body: 16px - 18px (Main content)
+- Small: 14px (Captions, metadata)
+- Tiny: 12px (Footnotes, legal)
+
+### Mobile
+- H1: 32px - 36px
+- H2: 28px - 30px
+- H3: 22px - 24px
+- H4: 18px - 20px
+- Body: 16px
+- Small: 14px
+- Tiny: 12px
+
+## Line Height (Interlinea)
+
+- Headings: 1.2 - 1.3
+- Body text: 1.6 - 1.8
+- Buttons/UI: 1.4 - 1.5
+
+## Letter Spacing
+
+- Headings grandi (H1-H2): -0.02em (leggermente compresso)
+- Headings piccoli (H3-H4): 0em (normale)
+- Body text: 0em
+- Uppercase text: 0.05em - 0.1em (più spaziato)
+- Buttons: 0.02em
+
+## Implementazione Web
+
+### Google Fonts Import
+```html
+<!-- Nel <head> del HTML -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+```
+
+### CSS Variables
+```css
+:root {
+  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  
+  --font-size-h1: 48px;
+  --font-size-h2: 36px;
+  --font-size-h3: 28px;
+  --font-size-body: 16px;
+  --font-size-small: 14px;
+  
+  --line-height-heading: 1.25;
+  --line-height-body: 1.7;
+}
+```
+
+## Note sull'Accessibilità
+
+- Dimensione minima testo: 14px (per WCAG AA)
+- Contrasto minimo: 4.5:1 per testo normale, 3:1 per testo large (WCAG AA)
+- Evitare font troppo sottili (weight < 400) per testo piccolo
+- Line-height minimo: 1.5 per body text
+- Font sans-serif preferiti per leggibilità su schermo
+- Supportare zoom testo fino a 200%
+
+## Font Fallback Stack
+
+```css
+/* Assicurare sempre un fallback system font */
+font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+             Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+             Roboto, Helvetica, Arial, sans-serif;
+```
+
+## Performance Tips
+
+- Usare `font-display: swap` per evitare FOIT (Flash of Invisible Text)
+- Caricare solo i pesi necessari (non tutto il font family)
+- Considerare self-hosting per progetti production
+- Preload font critici per above-the-fold content
