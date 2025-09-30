@@ -1,0 +1,251 @@
+PRIVACY POLICY / INFORMATIVA PRIVACY
+AnimalHealthDiary
+
+Data Ultima Modifica: 30 Settembre 2025
+
+================================================================================
+1. INTRODUZIONE
+================================================================================
+
+La presente informativa sulla privacy ("Privacy Policy") descrive le modalità 
+di raccolta, utilizzo e protezione dei dati personali degli utenti che utilizzano 
+l'applicazione AnimalHealthDiary ("l'Applicazione", "il Servizio").
+
+AnimalHealthDiary è un'applicazione per il monitoraggio della salute degli animali 
+domestici. Rispettiamo la tua privacy e ci impegniamo a proteggere i tuoi dati 
+personali in conformità con il Regolamento Generale sulla Protezione dei Dati 
+(GDPR - Regolamento UE 2016/679).
+
+================================================================================
+2. TITOLARE DEL TRATTAMENTO
+================================================================================
+
+Il titolare del trattamento dei dati è:
+[Inserire nome e dati del titolare]
+[Inserire indirizzo email di contatto]
+
+Per qualsiasi domanda relativa alla presente Privacy Policy o al trattamento 
+dei tuoi dati personali, puoi contattarci all'indirizzo email sopra indicato.
+
+================================================================================
+3. DATI RACCOLTI
+================================================================================
+
+L'Applicazione raccoglie e tratta le seguenti categorie di dati:
+
+3.1 DATI DEGLI ANIMALI
+- Nome dell'animale
+- Specie (cane, gatto, altro)
+- Peso
+- Età
+- Alimentazione
+- Sintomi e condizioni di salute
+- Livello di attività
+- Note e osservazioni
+- Fotografie (opzionale)
+- Storico delle visite e controlli
+
+3.2 DATI TECNICI
+- Data e ora delle registrazioni
+- Dati di utilizzo dell'applicazione
+- Indirizzo IP (solo se l'applicazione è utilizzata in modalità web)
+- Informazioni sul browser e dispositivo
+
+3.3 DATI GENERATI DA INTELLIGENZA ARTIFICIALE
+- Analisi e raccomandazioni generate dal sistema AI
+- Report di valutazione dello stato di salute
+
+================================================================================
+4. BASE GIURIDICA DEL TRATTAMENTO
+================================================================================
+
+Il trattamento dei dati personali si basa su:
+
+a) CONSENSO DELL'UTENTE (Art. 6(1)(a) GDPR)
+L'utente fornisce il proprio consenso esplicito al trattamento dei dati inseriti 
+nell'applicazione.
+
+b) LEGITTIMO INTERESSE (Art. 6(1)(f) GDPR)
+Il trattamento è necessario per fornire e migliorare il servizio offerto 
+dall'Applicazione.
+
+================================================================================
+5. FINALITÀ DEL TRATTAMENTO
+================================================================================
+
+I dati personali vengono trattati per le seguenti finalità:
+
+5.1 FINALITÀ PRIMARIE
+- Fornire il servizio di monitoraggio della salute degli animali
+- Generare report e analisi sullo stato di salute
+- Creare grafici e visualizzazioni dell'andamento dei parametri
+- Generare raccomandazioni personalizzate tramite AI
+- Inviare notifiche in caso di sintomi critici
+- Permettere l'esportazione dei dati in formato CSV/JSON
+
+5.2 FINALITÀ SECONDARIE
+- Migliorare le funzionalità dell'Applicazione
+- Analisi statistiche aggregate e anonimizzate
+- Risoluzione di problemi tecnici
+
+================================================================================
+6. MODALITÀ DI TRATTAMENTO
+================================================================================
+
+I dati vengono trattati con strumenti elettronici e informatici, con logiche 
+strettamente correlate alle finalità indicate e comunque in modo da garantire 
+la sicurezza e la riservatezza dei dati stessi.
+
+6.1 STORAGE LOCALE
+I dati vengono salvati localmente sul dispositivo dell'utente in formato JSON.
+Non vengono trasmessi automaticamente a server esterni, salvo per le chiamate 
+API necessarie al funzionamento del servizio AI (OpenAI).
+
+6.2 FOTOGRAFIE
+Le fotografie caricate vengono salvate localmente nella directory 
+webapp/data/photos/ e non vengono trasmesse a terzi.
+
+================================================================================
+7. COMUNICAZIONE E DIFFUSIONE DEI DATI
+================================================================================
+
+7.1 CONDIVISIONE CON TERZE PARTI
+I dati possono essere condivisi con:
+
+- OPENAI (ChatGPT API): Per la generazione di analisi e raccomandazioni AI.
+  I dati inviati a OpenAI sono soggetti alla loro Privacy Policy disponibile su:
+  https://openai.com/policies/privacy-policy
+
+Non vendiamo, affittiamo o condividiamo i tuoi dati personali con terze parti 
+per scopi di marketing.
+
+7.2 TRASFERIMENTI INTERNAZIONALI
+I dati potrebbero essere trasferiti e trattati in paesi al di fuori dello Spazio 
+Economico Europeo (SEE) per l'utilizzo dei servizi di OpenAI. Tali trasferimenti 
+avvengono in conformità con le garanzie appropriate previste dal GDPR.
+
+================================================================================
+8. CONSERVAZIONE DEI DATI
+================================================================================
+
+I dati vengono conservati per il tempo necessario a fornire il servizio e 
+verranno cancellati su richiesta dell'utente.
+
+L'utente può eliminare i propri dati in qualsiasi momento:
+- Cancellando il file health_history.json
+- Eliminando le foto dalla directory photos/
+- Disinstallando l'applicazione
+
+================================================================================
+9. DIRITTI DELL'INTERESSATO
+================================================================================
+
+In conformità con il GDPR, l'utente ha diritto a:
+
+a) ACCESSO (Art. 15 GDPR)
+   Ottenere conferma dell'esistenza dei dati e accedervi
+
+b) RETTIFICA (Art. 16 GDPR)
+   Correggere dati inesatti o incompleti
+
+c) CANCELLAZIONE (Art. 17 GDPR - "Diritto all'oblio")
+   Ottenere la cancellazione dei dati
+
+d) LIMITAZIONE (Art. 18 GDPR)
+   Limitare il trattamento dei dati
+
+e) PORTABILITÀ (Art. 20 GDPR)
+   Ricevere i dati in formato strutturato (CSV/JSON già disponibile)
+
+f) OPPOSIZIONE (Art. 21 GDPR)
+   Opporsi al trattamento dei dati
+
+g) REVOCA DEL CONSENSO (Art. 7(3) GDPR)
+   Revocare il consenso in qualsiasi momento
+
+h) RECLAMO (Art. 77 GDPR)
+   Proporre reclamo all'Autorità Garante per la Protezione dei Dati Personali
+
+Per esercitare questi diritti, contatta il Titolare del Trattamento all'indirizzo 
+indicato nella sezione 2.
+
+================================================================================
+10. SICUREZZA DEI DATI
+================================================================================
+
+Abbiamo implementato misure tecniche e organizzative appropriate per garantire 
+un livello di sicurezza adeguato al rischio, tra cui:
+
+- Storage locale dei dati (nessuna trasmissione non necessaria)
+- Crittografia delle comunicazioni (HTTPS quando applicabile)
+- Accesso limitato ai dati solo dall'utente proprietario
+- Backup e procedure di ripristino
+
+================================================================================
+11. MINORI
+================================================================================
+
+L'Applicazione non è destinata a minori di 16 anni. Non raccogliamo 
+consapevolmente dati personali da minori senza il consenso dei genitori o 
+tutori legali.
+
+================================================================================
+12. COOKIES E TECNOLOGIE SIMILI
+================================================================================
+
+La versione web dell'Applicazione utilizza cookies tecnici necessari per il 
+funzionamento del servizio (es. gestione della sessione, preferenze lingua).
+
+Non utilizziamo cookies di profilazione o tracciamento.
+
+================================================================================
+13. MODIFICHE ALLA PRIVACY POLICY
+================================================================================
+
+Ci riserviamo il diritto di modificare la presente Privacy Policy in qualsiasi 
+momento. Le modifiche saranno comunicate agli utenti tramite l'applicazione e/o 
+tramite pubblicazione sul repository GitHub.
+
+Data dell'ultima modifica: vedere l'inizio del documento.
+
+================================================================================
+14. DISCLAIMER MEDICO
+================================================================================
+
+IMPORTANTE: AnimalHealthDiary è uno strumento informativo e NON sostituisce il 
+parere di un veterinario professionista. Le raccomandazioni generate dall'AI 
+sono indicative e non costituiscono diagnosi medica.
+
+Per qualsiasi problema di salute del tuo animale, consulta sempre un veterinario 
+qualificato.
+
+================================================================================
+15. CONTATTI
+================================================================================
+
+Per domande, richieste o esercizio dei diritti relativi ai tuoi dati personali:
+
+Email: [inserire email]
+GitHub: https://github.com/DamianoCeka/AnimalHealthDiary
+
+================================================================================
+16. AUTORITÀ DI CONTROLLO
+================================================================================
+
+In caso di dubbi sul trattamento dei tuoi dati personali, hai il diritto di 
+presentare un reclamo all'autorità di controllo competente:
+
+ITALIA:
+Garante per la Protezione dei Dati Personali
+Sito web: https://www.garanteprivacy.it
+Email: garante@gpdp.it
+
+================================================================================
+
+ACCETTAZIONE
+
+Utilizzando l'Applicazione, dichiari di aver letto e compreso la presente 
+Privacy Policy e di acconsentire al trattamento dei tuoi dati personali come 
+qui descritto.
+
+================================================================================
