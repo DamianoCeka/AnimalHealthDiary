@@ -13,13 +13,18 @@ AnimalHealthDiary è un'applicazione Python per tenere traccia della salute dei 
 ✅ **Consigli personalizzati**: suggerimenti basati sulla specie, età e condizioni dell'animale  
 ✅ **Rilevamento sintomi**: identifica sintomi gravi e moderati con avvisi  
 ✅ **Report dettagliato**: output formattato con tutte le informazioni e raccomandazioni  
-✅ **Web App con AI**: interfaccia web moderna con analisi AI tramite ChatGPT (OpenAI)
+✅ **Web App con AI**: interfaccia web moderna con analisi AI tramite ChatGPT (OpenAI)  
+✅ **🆕 Notifiche automatiche**: alert per sintomi critici (simulazione email)  
+✅ **🆕 Grafici interattivi**: visualizzazione peso e attività con Matplotlib  
+✅ **🆕 Upload foto**: possibilità di allegare foto per ogni visita  
+✅ **🆕 Export dati**: esportazione storico in formato CSV/JSON  
+✅ **🆕 Multilingua**: supporto italiano/inglese selezionabile
 
 ## Requisiti
 
 - Python 3.6 o superiore
 - Nessuna dipendenza esterna richiesta per script base
-- Per la webapp: Flask, OpenAI (vedi `webapp/requirements.txt`)
+- Per la webapp: Flask, OpenAI, Matplotlib, Flask-Babel (vedi `webapp/requirements.txt`)
 
 ## Installazione
 
@@ -123,25 +128,122 @@ L'applicazione sarà disponibile su: http://127.0.0.1:5000
 
 #### Funzionalità della webapp
 
-✨ **Interfaccia Web Moderna**
+**✨ Interfaccia Web Moderna**
 - Form interattivo per inserimento dati
 - Design responsive e user-friendly
 - Validazione in tempo reale
 
-🤖 **Analisi AI con ChatGPT**
+**🤖 Analisi AI con ChatGPT**
 - Analisi intelligente dei dati dell'animale
 - Consigli personalizzati basati su AI
 - Valutazioni professionali sulla salute
 
-📊 **Storico Visite**
+**📊 Storico Visite**
 - Visualizzazione di tutte le analisi precedenti
 - Ricerca e filtro delle visite
-- Export dei dati
+- Export dei dati in CSV/JSON
 
-💾 **Persistenza Dati**
+**💾 Persistenza Dati**
 - Salvataggio automatico di ogni analisi
 - Database locale in formato JSON
 - Facile consultazione dello storico
+
+### 🆕 Nuove Funzionalità Avanzate
+
+#### 🚨 Sistema di Notifiche Automatiche
+
+Quando vengono rilevati **sintomi critici**, il sistema genera automaticamente un alert:
+
+- **Sintomi monitorati**: vomito, diarrea, sangue, letargia, febbre, convulsioni, difficoltà respiratorie
+- **Alert immediato**: notifica visibile nell'interfaccia
+- **Simulazione email**: log dell'alert con timestamp e dettagli
+- **Raccomandazione**: invito urgente a consultare un veterinario
+
+**Come funziona:**
+- Il sistema analizza i sintomi inseriti
+- Se rileva parole chiave critiche, genera un messaggio di allerta
+- L'alert viene mostrato in modo prominente nella pagina dei risultati
+- Viene salvato nello storico per riferimento futuro
+
+#### 📈 Grafici e Visualizzazioni
+
+La webapp ora genera automaticamente **grafici interattivi** usando Matplotlib:
+
+**1. Grafico Andamento Peso**
+- Visualizza l'evoluzione del peso nel tempo
+- Disponibile nella sezione Storico
+- Filtro per singolo animale
+- Formato PNG incorporato nella pagina
+
+**2. Grafico Distribuzione Attività**
+- Mostra la frequenza dei diversi livelli di attività registrati
+- Utile per monitorare i cambiamenti comportamentali
+- Rappresentazione a barre colorata
+
+**Come accedere:**
+- Vai alla pagina "Storico Visite"
+- Seleziona un animale dal menu (opzionale)
+- I grafici vengono generati automaticamente se ci sono dati sufficienti
+
+#### 📸 Gestione Foto
+
+È ora possibile **allegare foto** a ogni visita:
+
+**Formati supportati:**
+- PNG, JPG, JPEG, GIF
+- Dimensione massima consigliata: 5MB
+
+**Funzionalità:**
+- Upload durante la registrazione di una nuova visita
+- Anteprima dell'immagine caricata
+- Storage locale in `webapp/data/photos/`
+- Visualizzazione nella pagina di dettaglio della visita
+
+**Come usare:**
+1. Nel form di inserimento dati, clicca su "Allega Foto"
+2. Seleziona un'immagine dal tuo dispositivo
+3. L'immagine verrà salvata con un nome unico
+4. Visualizza la foto nella cronologia delle visite
+
+#### 💾 Esportazione Dati
+
+Ora puoi **esportare tutto lo storico** in due formati:
+
+**1. Formato CSV**
+- Compatibile con Excel, Google Sheets
+- Colonne: ID, Data, Nome, Specie, Peso, Età, Alimentazione, Attività, Sintomi, Note
+- Ideale per analisi e grafici personalizzati
+
+**2. Formato JSON**
+- Include tutti i dati inclusa l'analisi AI
+- Formato strutturato per elaborazioni avanzate
+- Backup completo del database
+
+**Come esportare:**
+- Nella pagina "Storico Visite", clicca su "Esporta Dati"
+- Scegli il formato (CSV o JSON)
+- Il file viene scaricato automaticamente
+- Nome file: `animal_health_history.csv` o `animal_health_history.json`
+
+#### 🌍 Supporto Multilingua
+
+L'applicazione supporta **italiano e inglese**:
+
+**Funzionalità:**
+- Cambio lingua in tempo reale
+- Interfaccia completamente tradotta
+- Persistenza della preferenza lingua
+- Supporto UTF-8 per caratteri speciali
+
+**Come cambiare lingua:**
+1. Clicca sull'icona della lingua nell'header (🇮🇹/🇬🇧)
+2. Seleziona la lingua desiderata
+3. L'interfaccia si aggiorna istantaneamente
+4. La preferenza viene salvata per le visite future
+
+**Lingue disponibili:**
+- 🇮🇹 Italiano (predefinito)
+- 🇬🇧 English
 
 ## Funzionalità di analisi
 
@@ -180,14 +282,41 @@ Il codice è organizzato in una classe `AnimalHealthDiary` con i seguenti metodi
 ```
 webapp/
 ├── app.py                 # Applicazione Flask principale
+├── utils.py              # Utility: grafici, export, foto, notifiche
 ├── requirements.txt       # Dipendenze Python
 ├── templates/            # Template HTML
 │   ├── index.html       # Form inserimento dati
-│   ├── history.html     # Storico visite
+│   ├── history.html     # Storico visite con grafici
 │   └── entry.html       # Dettaglio singola visita
-└── data/                # Database locale (creato automaticamente)
-    └── health_history.json
+├── translations/         # File traduzione (i18n)
+│   ├── it/              # Italiano
+│   └── en/              # Inglese
+└── data/                # Database locale
+    ├── health_history.json  # Storico visite
+    └── photos/              # Foto caricate
 ```
+
+### Moduli utility (utils.py)
+
+**EmailAlert**
+- Controllo sintomi critici
+- Generazione messaggi di alert
+- Simulazione notifiche email
+
+**ChartGenerator**
+- Grafici andamento peso
+- Grafici distribuzione attività
+- Conversione immagini in base64
+
+**DataExporter**
+- Export CSV
+- Export JSON
+- Generazione response Flask
+
+**PhotoManager**
+- Validazione upload
+- Storage foto
+- Gestione nomi file univoci
 
 ## Contribuire
 
