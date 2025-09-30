@@ -1,13 +1,10 @@
 # AnimalHealthDiary 🐾
-
 App diario salute per animali con monitoraggio sintomi, peso e consigli IA.
 
 ## Descrizione
-
 AnimalHealthDiary è un'applicazione Python per tenere traccia della salute dei tuoi animali domestici. Lo script raccoglie informazioni sul tuo animale e fornisce consigli personalizzati basati su un sistema di analisi con regole intelligenti.
 
 ## Caratteristiche
-
 ✅ **Raccolta dati completa**: nome, specie, peso, età, alimentazione e sintomi  
 ✅ **Analisi intelligente**: valutazione automatica dei dati inseriti  
 ✅ **Consigli personalizzati**: suggerimenti basati sulla specie, età e condizioni dell'animale  
@@ -21,19 +18,16 @@ AnimalHealthDiary è un'applicazione Python per tenere traccia della salute dei 
 ✅ **🆕 Multilingua**: supporto italiano/inglese selezionabile
 
 ## Requisiti
-
 - Python 3.6 o superiore
 - Nessuna dipendenza esterna richiesta per script base
 - Per la webapp: Flask, OpenAI, Matplotlib, Flask-Babel (vedi `webapp/requirements.txt`)
 
 ## Installazione
-
 1. Clona il repository:
 ```bash
 git clone https://github.com/DamianoCeka/AnimalHealthDiary.git
 cd AnimalHealthDiary
 ```
-
 2. Lo script base è pronto all'uso, nessuna installazione aggiuntiva necessaria!
 
 ## Come usare
@@ -41,21 +35,16 @@ cd AnimalHealthDiary
 ### Script da riga di comando
 
 #### Esecuzione base
-
 Esegui lo script dalla riga di comando:
-
 ```bash
 python3 animal_diary.py
 ```
-
 oppure (su Windows):
-
 ```bash
 python animal_diary.py
 ```
 
 #### Input richiesti
-
 Lo script ti chiederà di inserire le seguenti informazioni:
 
 1. **Nome animale**: il nome del tuo animale
@@ -66,7 +55,6 @@ Lo script ti chiederà di inserire le seguenti informazioni:
 6. **Sintomi**: sintomi osservati separati da virgola, o "nessuno" se non ci sono sintomi
 
 #### Esempio di utilizzo
-
 ```
 === DIARIO SALUTE ANIMALE ===
 Inserisci i dati dell'animale:
@@ -79,10 +67,7 @@ Alimentazione (crocchette/umido/mista/casalinga): mista
 Sintomi osservati (separati da virgola, o 'nessuno'): nessuno
 ```
 
-[... rest of existing content ...]
-
 ## 🎨 Branding e Asset
-
 Nella directory `branding/` trovi tutti gli asset visivi del progetto:
 
 ### Logo Demo
@@ -98,23 +83,21 @@ Nella directory `branding/` trovi tutti gli asset visivi del progetto:
 ### Font Suggeriti
 - **File**: `branding/fonts_suggested.txt`
 - **Raccomandazioni**:
-  - **Headings**: Poppins (Google Fonts)
-  - **Body**: Inter (Google Fonts)
-  - **Code**: JetBrains Mono
+  - Headings: Poppins (Google Fonts)
+  - Body: Inter (Google Fonts)
+  - Code: JetBrains Mono
 - **Dettagli**: Include dimensioni, line-height, implementazione CSS
 
 ### Come Usare gli Asset
-
 1. **Logo**: Incorpora il file SVG nei tuoi template HTML
 2. **Colori**: Usa i codici HEX forniti per mantenere coerenza visiva
 3. **Font**: Importa da Google Fonts come indicato nel file
 
 ## 🌐 Landing Page
-
 Nella directory `landingpage/` trovi una pagina pronta per il deploy:
 
 ### File Inclusi
-- **index.html**: Landing page completa con tutte le sezioni
+- `index.html`: Landing page completa con tutte le sezioni
 
 ### Sezioni Disponibili
 1. **Hero**: Titolo principale con CTA
@@ -146,15 +129,12 @@ python -m http.server 8000
 ```
 
 ### Personalizzazione
-
 - Sostituisci `[Insert your email]` con il tuo indirizzo email
 - Aggiungi video/GIF nella sezione demo
 - Personalizza i colori utilizzando la palette in `branding/color_palette.txt`
 
 ## 📄 Privacy Policy
-
 Il file `PRIVACY_POLICY.txt` contiene un'informativa privacy compliant GDPR che include:
-
 - Raccolta e utilizzo dei dati
 - Diritti dell'interessato (accesso, rettifica, cancellazione, portabilità)
 - Base giuridica del trattamento
@@ -162,21 +142,18 @@ Il file `PRIVACY_POLICY.txt` contiene un'informativa privacy compliant GDPR che 
 - Disclaimer medico
 - Contatti per esercitare i diritti
 
-**Come usare**: Personalizza le sezioni con [Inserire...] con i tuoi dati di contatto.
+**Come usare**: Personalizza le sezioni con `[Inserire...]` con i tuoi dati di contatto.
 
 ## Struttura del codice
 
 ### Script base
-
 Il codice è organizzato in una classe `AnimalHealthDiary` con i seguenti metodi:
-
 - `raccolta_dati()`: raccoglie input dall'utente
 - `analisi_ia()`: analizza i dati con regole intelligenti
 - `genera_report()`: crea e stampa il report finale
 - `esegui()`: metodo principale che coordina l'esecuzione
 
 ### Web Application
-
 ```
 webapp/
 ├── app.py                 # Applicazione Flask principale
@@ -216,16 +193,64 @@ webapp/
 - Storage foto
 - Gestione nomi file univoci
 
-## Contribuire
+## 💖 Supporta lo Sviluppo
 
+Se trovi utile questo progetto e vuoi supportarne lo sviluppo, considera una donazione o l'acquisto di servizi premium!
+
+### 💳 Donazioni
+
+[![Sponsor con PayPal](https://img.shields.io/badge/Sponsor-PayPal-blue.svg?style=for-the-badge&logo=paypal)](https://paypal.me/damianoceka)
+
+**Come donare:**
+- 💰 **PayPal**: [paypal.me/damianoceka](https://paypal.me/damianoceka)
+- ✉️ **Email diretta**: spekter99@gmail.com (per accordi personalizzati)
+
+Ogni contributo, piccolo o grande, è molto apprezzato e mi aiuta a dedicare più tempo allo sviluppo di nuove funzionalità! 🙏
+
+### 🌟 Servizi Premium
+
+Hai bisogno di supporto professionale? Offro servizi a pagamento per aziende e professionisti:
+
+#### 🔧 Installazione e Setup
+- Installazione guidata su server locale o cloud
+- Configurazione ambiente di produzione
+- Setup database e ottimizzazioni performance
+- Integrazione con sistemi esistenti
+
+#### ☁️ Deployment Cloud
+- Deploy su AWS, Google Cloud, Azure, DigitalOcean
+- Configurazione CI/CD automatizzato
+- Setup backup e disaster recovery
+- Monitoraggio e alerting
+
+#### 🎨 Custom Branding
+- Personalizzazione completa interfaccia con il tuo brand
+- Logo, colori e font personalizzati
+- Design responsive su misura
+- White label solution
+
+#### 💬 Help Desk e Supporto
+- Supporto tecnico prioritario via email/chat
+- Risoluzione bug e troubleshooting
+- Consulenza per personalizzazioni
+- Training per il tuo team
+
+#### 🚀 Sviluppo Custom
+- Nuove funzionalità su richiesta
+- Integrazioni con API esterne
+- Report personalizzati
+- Dashboard amministratore
+
+**Interessato?** Contattami via email: **spekter99@gmail.com**  
+Riceverai un preventivo personalizzato entro 24 ore! 📧
+
+## Contribuire
 Contribuzioni, issue e feature request sono benvenuti! Sentiti libero di aprire una issue o una pull request.
 
 ## Licenza
-
 Questo progetto è open source e disponibile per uso personale ed educativo.
 
 ## Contatti
-
 Damiano Ceka - [@DamianoCeka](https://github.com/DamianoCeka)
 
 Link progetto: [https://github.com/DamianoCeka/AnimalHealthDiary](https://github.com/DamianoCeka/AnimalHealthDiary)
