@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Health Diary - Diario Salute Animale</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .nav-links {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .nav-links a {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background: #667eea;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .loading {
+            text-align: center;
+            margin-top: 20px;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .result-container {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: none;
+        }
+        
+        .result-container h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .result-content {
+            white-space: pre-wrap;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .success-actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .success-actions a {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐾 Animal Health Diary</h1>
+        <p class="subtitle">Diario Salute Animale con Analisi AI</p>
+        
+        <div class="nav-links">
+            <a href="/history">📊 Visualizza Storico</a>
+        </div>
+        
+        <form id="animalForm">
+            <div class="form-group">
+                <label for="nome">Nome Animale *</label>
+                <input type="text" id="nome" name="nome" required placeholder="Es: Luna">
+            </div>
+            
+            <div class="form-group">
+                <label for="specie">Specie *</label>
+                <select id="specie" name="specie" required>
+                    <option value="">Seleziona...</option>
+                    <option value="cane">Cane</option>
+                    <option value="gatto">Gatto</option>
+                    <option value="coniglio">Coniglio</option>
+                    <option value="uccello">Uccello</option>
+                    <option value="altro">Altro</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="peso">Peso (kg) *</label>
+                <input type="number" id="peso" name="peso" step="0.1" required placeholder="Es: 4.5">
+            </div>
+            
+            <div class="form-group">
+                <label for="eta">Età (anni) *</label>
+                <input type="number" id="eta" name="eta" required placeholder="Es: 7">
+            </div>
+            
+            <div class="form-group">
+                <label for="alimentazione">Alimentazione *</label>
+                <select id="alimentazione" name="alimentazione" required>
+                    <option value="">Seleziona...</option>
+                    <option value="crocchette">Crocchette</option>
+                    <option value="umido">Umido</option>
+                    <option value="mista">Mista</option>
+                    <option value="casalinga">Casalinga</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="attivita">Livello di Attività *</label>
+                <select id="attivita" name="attivita" required>
+                    <option value="">Seleziona...</option>
+                    <option value="basso">Basso</option>
+                    <option value="medio">Medio</option>
+                    <option value="alto">Alto</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="sintomi">Sintomi Osservati *</label>
+                <textarea id="sintomi" name="sintomi" required placeholder="Descrivi eventuali sintomi osservati o scrivi 'nessuno'"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="note">Note Aggiuntive</label>
+                <textarea id="note" name="note" placeholder="Eventuali note aggiuntive (opzionale)"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">🤖 Analizza con AI</button>
+        </form>
+        
+        <div class="loading" id="loading" style="display: none;">
+            ⏳ Analisi in corso... Attendere prego
+        </div>
+        
+        <div class="error" id="error"></div>
+        
+        <div class="result-container" id="result">
+            <h2>🤖 Analisi AI Completata</h2>
+            <div class="result-content" id="resultContent"></div>
+            <div class="success-actions">
+                <a href="/history">📊 Vai allo Storico</a>
+                <a href="/" onclick="location.reload(); return false;">➕ Nuova Analisi</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('animalForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const submitBtn = this.querySelector('.submit-btn');
+            const loading = document.getElementById('loading');
+            const error = document.getElementById('error');
+            const result = document.getElementById('result');
+            
+            // Reset
+            error.style.display = 'none';
+            result.style.display = 'none';
+            submitBtn.disabled = true;
+            loading.style.display = 'block';
+            
+            try {
+                const response = await fetch('/analyze', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    error.textContent = data.message;
+                    error.style.display = 'block';
+                } else {
+                    document.getElementById('resultContent').textContent = data.analisi;
+                    result.style.display = 'block';
+                }
+            } catch (err) {
+                error.textContent = 'Errore di connessione: ' + err.message;
+                error.style.display = 'block';
+            } finally {
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
